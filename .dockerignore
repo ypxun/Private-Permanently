@@ -1,0 +1,49 @@
+# 版本控制
+.git
+.gitignore
+.github
+
+# 依赖文件
+node_modules
+npm-debug.log
+
+# 环境配置
+.env
+.env.*
+
+# 开发和测试文件
+test
+__tests__
+coverage
+.eslintrc
+.eslintignore
+.editorconfig
+.prettierrc
+jest.config.js
+
+# 日志文件
+logs
+*.log
+
+# 临时文件
+.tmp
+.temp
+.cache
+
+# 文档和示例
+docs
+examples
+README.md
+CHANGELOG.md
+CONTRIBUTING.md
+LICENSE
+
+# 构建文件
+dist
+build
+
+# 其他不需要的文件
+*.md
+!README.md
+.DS_Store
+Thumbs.db
