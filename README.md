@@ -37,10 +37,10 @@ docker-compose up -d
 
 ## API 使用说明
 
-### 获取文件内容
+### 获取文件内容content
 
 ```
-GET /api/github/:owner/:repo/content/:path
+GET /api/github/owner/repo/content/path to file
 ```
 
 示例:
@@ -48,10 +48,10 @@ GET /api/github/:owner/:repo/content/:path
 GET /api/github/user/repo/content/folder/file.txt
 ```
 
-### 获取文件元数据
+### 获取文件元数据meta
 
 ```
-GET /api/github/:owner/:repo/meta/:path
+GET /api/github/owner/repo/meta/path to file
 ```
 
 示例:
@@ -59,10 +59,10 @@ GET /api/github/:owner/:repo/meta/:path
 GET /api/github/user/repo/meta/folder/file.txt
 ```
 
-### 列出目录内容
+### 列出目录内容list
 
 ```
-GET /api/github/:owner/:repo/list/:path
+GET /api/github/owner/repo/list/path
 ```
 
 示例:
