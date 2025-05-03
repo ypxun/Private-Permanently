@@ -25,7 +25,7 @@ docker run -d \
   --name private-permanently \
   -p 15300:15300 \
   -e GITHUB_TOKEN=your_github_token \
-  ghcr.io/yourusername/private-permanently:latest
+  pkook/private-permanently:latest
 
 # 使用已发布镜像的 docker‑compose
 # 先在同级目录下创建 .env（只需 GITHUB_TOKEN）
@@ -76,11 +76,10 @@ GET /api/github/user/repo/list/folder
 
 | 环境变量 | 描述 | 默认值 |
 |------------|-------------|---------|
-| PORT | 服务监听端口 | 3000 |
 | NODE_ENV | 运行环境 | production |
 | GITHUB_TOKEN | GitHub Fine-grained Token | 必需 |
 | CACHE_ENABLED | 是否启用缓存 | true |
-| CACHE_TTL | 缓存有效期(秒) | 3600 |
+| CACHE_TTL | 缓存有效期(秒) | 60 |
 | RATE_LIMIT_WINDOW_MS | 速率限制窗口(毫秒) | 900000 |
 | RATE_LIMIT_MAX | 速率限制最大请求数 | 100 |
 

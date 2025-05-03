@@ -3,7 +3,7 @@ version: '3.8'
 services:
   private-permanently:
     container_name: private-permanently
-    image:
+    image: pkook/private-permanently:latest
     ports:
       - "15300:15300"
     environment:
