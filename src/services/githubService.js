@@ -47,7 +47,7 @@ const createGithubClient = () => {
   return axios.create({
     baseURL: 'https://api.github.com',
     headers: {
-      'Accept': 'application/vnd.github.v3+json',
+      'Accept': 'application/vnd.github.v3.raw',
       'Authorization': `token ${config.GITHUB_TOKEN}`,
       'User-Agent': 'GitHub-API-Proxy'
     }
@@ -74,18 +74,14 @@ const getFileContent = async (owner, repo, filePath) => {
       throw error;
     }
 
-    const contentType = getMimeType(filePath);
-    const binary = isBinaryFile(filePath);
-
+    // 直接返回原始内容（response.data 已是非 Base64 的原始数据）
     return {
-      name: response.data.name,
-      path: response.data.path,
-      sha: response.data.sha,
-      content: response.data.content,
-      contentType,
-      isBinary: binary,
-      size: response.data.size,
-      url: response.data.html_url
+      name: path.basename(filePath),
+      path: filePath,
+      content: response.data, // ✅ 直接使用原始内容（无需处理 Base64）
+      contentType: getMimeType(filePath),
+      isBinary: isBinaryFile(filePath),
+      size: Buffer.byteLength(response.data, 'utf8') // 计算内容大小
     };
   } catch (error) {
     if (error.response) {

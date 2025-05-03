@@ -22,13 +22,11 @@ router.get('/:owner/:repo/content/*', async (req, res, next) => {
     const result = await githubService.getFileContent(owner, repo, path);
     
     // 设置内容类型
-    if (result.contentType) {
-      res.type(result.contentType);
-    }
+    res.type(result.contentType);
     
-    // 如果是二进制内容，直接返回Buffer
+    // 如果是二进制文件，直接返回 Buffer（需转换原始内容）
     if (result.isBinary) {
-      return res.send(Buffer.from(result.content, 'base64'));
+      return res.send(Buffer.from(result.content)); // ✅ 注意：response.data 已是非 Base64 数据
     }
     
     // 否则返回文本内容
