@@ -88,8 +88,8 @@ GET /api/github/user/repo/list/folder
 
 ```bash
 # 克隆仓库
-git clone https://github.com/yourusername/github-api-proxy.git
-cd github-api-proxy
+git clone https://github.com/yourusername/Private-Permanently.git
+cd Private-Permanently
 
 # 安装依赖
 npm install
@@ -106,12 +106,12 @@ npm run dev
 
 ```bash
 # 手动构建镜像
-docker build -t github-api-proxy .
+docker build -t Private-Permanently .
 
 # 运行构建的镜像
-docker run -d -p 3000:3000 -e GITHUB_TOKEN=your_token github-api-proxy
+docker run -d -p 15300:15300 -e GITHUB_TOKEN=your_token 
 ```
 
 ## 许可证
 
-本项目采用 GPL‑3.0-only 许可证，详见 LICENSE 文件。
+GPL‑3.0-only
