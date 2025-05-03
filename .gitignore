@@ -1,0 +1,30 @@
+# Node.js
+node_modules/
+
+# 环境变量文件
+.env
+
+# 构建目录
+dist/
+build/
+
+# 日志文件
+npm-debug.log*
+yarn-debug.log*
+
+# 编辑器/IDE 配置
+.vscode/
+.idea/
+
+# macOS 系统文件
+.DS_Store
+
+# Git 元数据
+.git/
+
+# 代码覆盖率
+coverage/
+
+# 临时文件（根据实际情况添加）
+*.swp
+*.swo
